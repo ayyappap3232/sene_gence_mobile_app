@@ -9,14 +9,14 @@ import {
 } from "react-native";
 import { fetchInitialDataFromApi } from "../helpers/fetchDataFromApi";
 
-export default function InitialScreen({navigation}) {
+export default function InitialScreen({navigation}:any) {
   const [initialData, setInitialData] = useState([]);
 
   useEffect(() => {
     fetchInitialDataFromApi(setInitialData);
   }, []);
 
-  const handleItem = (item) => {
+  const handleItem = (item:any) => {
     navigation.navigate("MenuListItem",{name: item?.text, items: item?.items})
   };
 
@@ -41,7 +41,7 @@ export default function InitialScreen({navigation}) {
 
   return (
     <>
-      {initialData?.appData?.menu?.items.map((childItem) => {
+      {initialData?.appData?.menu?.items.map((childItem:any) => {
         return (
           <TouchableOpacity
             style={{

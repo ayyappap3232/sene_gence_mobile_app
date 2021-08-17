@@ -1,16 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function MenuListItem({ navigation, route }) {
+export default function MenuListItem({ navigation, route }:any) {
 
-  const handleMenuItem = (item) => {
+  const handleMenuItem = (item:any) => {
     navigation.navigate('Home', {url: item?.as, name: item?.text})
   }  
 
   if (!route?.params?.items) {
     return <Text> No Items Found </Text>;
   }
-  return route?.params?.items.map((item) => {
+  return route?.params?.items.map((item:any) => {
     return (
       <TouchableOpacity
         style={{

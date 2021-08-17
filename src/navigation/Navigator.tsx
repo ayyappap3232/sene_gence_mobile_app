@@ -11,11 +11,11 @@ function Navigator() {
   return (
     <Stack.Navigator screenOptions={{ headerBackTitleVisible: false }} initialRouteName={"InitialScreen"}>
       <Stack.Screen name="InitialScreen" component={InitialScreen}/>
-      <Stack.Screen name="MenuListItem" component={MenuListItem} options={({ route }) => ({
+      <Stack.Screen name="MenuListItem" component={MenuListItem} options={({ route }:any) => ({
           title: route?.params?.name ? route.params.name : "Menu List Item",
         })}/>
       <Stack.Screen
-        options={({ route }) => ({
+        options={({ route }:any) => ({
           title: route?.params?.name ? route.params.name : "Home",
         })}
         name="Home"

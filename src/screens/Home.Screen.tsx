@@ -10,7 +10,7 @@ import {
 import { StyleSheet, Text, View } from "react-native";
 import { fetchDataFromApi } from "../helpers/fetchDataFromApi";
 
-export default function HomeScreen({ navigation, route }) {
+export default function HomeScreen({ navigation, route }:any) {
   const [data, setData] = useState([]);
   const path = route?.params?.url ? route?.params?.url : "/shop-the-look";
 
@@ -26,11 +26,11 @@ export default function HomeScreen({ navigation, route }) {
     );
   }
 
-  const handleLink = (url, name) => {
+  const handleLink = (url: string, name: string) => {
     navigation.push("Home", { url: url, name: name });
   };
 
-  const _renderItem = ({ item }) => {
+  const _renderItem = ({ item }:any) => {
     console.log("item url", item?.thumbnail?.src);
     return (
       <TouchableOpacity
@@ -51,7 +51,7 @@ export default function HomeScreen({ navigation, route }) {
   return (
     <View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {data?.pageData?.navMenu?.items?.map((item) => {
+        {data?.pageData?.navMenu?.items?.map((item:any) => {
           return (
             <TouchableOpacity
               key={item?.text}
